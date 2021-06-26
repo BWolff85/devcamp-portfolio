@@ -3,6 +3,10 @@ class PortfoliosController < ApplicationController
         @portfolio_items = Portfolio.all
     end
 
+    def swab
+        @swab_portfolio_items = Portfolio.swab
+    end
+
     def show
       @portfolio_item = Portfolio.find(params[:id])
     end
