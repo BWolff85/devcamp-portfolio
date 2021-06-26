@@ -6,4 +6,11 @@ class Portfolio < ApplicationRecord
     end
 
     scope :swab, -> { where(subtitle: "Swab them planks!") }
+
+    after_initialize :set_defaults
+
+    def set_defaults
+        self.main_image ||= "https://picsum.photos/600/400"
+        self.thumb_image ||= "https://picsum.photos/350/200"
+    end
 end
